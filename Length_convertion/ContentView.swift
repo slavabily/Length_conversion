@@ -59,8 +59,8 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             Form {
-                Section {
-                    TextField("Input", text: $inputNumber)
+                Section(header: Text("Input Value")) {
+                    TextField("Enter value...", text: $inputNumber)
                         .keyboardType(.decimalPad)
                 }
                 Section(header: Text("Input Unit")) {
@@ -79,7 +79,7 @@ struct ContentView: View {
                     }
                     .pickerStyle(SegmentedPickerStyle())
                 }
-                Section(header: Text("Output")) {
+                Section(header: Text("Output Value")) {
                     Text("\(outputNumber, specifier: "%.4f")")
                 }
             }
